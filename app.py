@@ -10,7 +10,7 @@ st.title("🔮 Previsão de Vendas por Loja e Categoria")
 
 @st.cache_data
 def load_data():
-    df = pd.read_csv("train.csv")
+    df = pd.read_parquet("train.parquet")
     df["date"] = pd.to_datetime(df["date"])
     df["sales"] = df["sales"].astype("float32")
     return df
