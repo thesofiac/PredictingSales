@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 # Carregar os dados
 @st.cache_data
 def load_data():
-    train = pd.read_csv("train.csv")
+    train = pd.read_parquet("train.parquet")
     train["date"] = pd.to_datetime(train["date"])
     train["sales"] = train["sales"].astype("float32")
     return train.sort_values(["store_nbr", "family", "date"])
