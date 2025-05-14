@@ -12,8 +12,14 @@ st.sidebar.title("Menu")
 opcao = st.sidebar.selectbox("Escolha uma opção:", ["Entenda os Dados", "Preveja as Vendas", "Avalie o modelo"])
 
 if opcao == "Entenda os Dados":
-    st.title("Bem-vindo!")
-    st.write("Esta é a página inicial.")
+    st.title("Entenda os Dados")
+    st.markdown("<h5>Os dados são referentes às vendas realizadas por 54 lojas espalhadas pelo país, no período de 01 de Janeiro de 2013 a 15 de Agosto de 2017.<br><br>
+                     As vendas foram categorizadas pelo departamento dos produtos vendidos (ex.: casa, beleza, mercearia e etc). <br><br>
+                     Para o tratamento de dados, combinei informações das vendas com informações de feriados nacionais e regionais com a localização de cada loja, para descobrir se a loja estará em funcionamento na data em questão ou não. <br><br>
+                     Extraí variáveis temporais como dia da semana, mês e fim/início de mês, levando em consideração as datas de pagamento dos locais. <br><br>
+                     Adicionei lags (valores de vendas passados) para capturar a dependência temporal e calculei médias móveis e médias exponenciais para captar tendências e sazonalidades. <br><br>
+                     Após testes com diferentes hiperparâmetros via GridSearch, foi selecionada a configuração GradientBoostingRegressor(learning_rate=0.1, max_depth=3, n_estimators=100, subsample=1.0) para realização das estimações. <br><br>
+                     Os dados previstos na aba <i>Preveja as Vendas</i> são previsões feitas pelo modelo para as vendas do dia 16 de Agosto de 2017</h5>, unsafe_allow_html=True)
 
 
 elif opcao == "Preveja as Vendas":
