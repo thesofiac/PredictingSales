@@ -7,9 +7,9 @@ st.title("📊 Consulta de Vendas por Loja e Categoria")
 # Carregar arquivos
 @st.cache_data
 def load_data():
-    df_cat = pd.read_csv("grouped_by_families.txt", sep=None, engine='python')
-    df_loja = pd.read_csv("grouped_by_stores.txt", sep=None, engine='python')
-    df_loja_cat = pd.read_csv("grouped_by_stores_families.txt", sep=None, engine='python')
+    df_cat = pd.read_csv("grouped_by_families.txt", sep=',', engine='python')
+    df_loja = pd.read_csv("grouped_by_stores.txt", sep=',', engine='python')
+    df_loja_cat = pd.read_csv("grouped_by_stores_families.txt", sep=',', engine='python')
     return df_cat, df_loja, df_loja_cat
 
 df_cat, df_loja, df_loja_cat = load_data()
