@@ -33,15 +33,3 @@ if not resultado.empty:
     st.metric(f"🛒 Vendas da Loja {store_selected} para a Categoria '{category_selected}'", f"R$ {vendas:,.2f}")
 else:
     st.warning("Não há dados para essa combinação.")
-
-# Mostrar tabelas completas como opção
-with st.expander("📁 Ver tabelas completas"):
-    st.subheader("Vendas por Categoria (todas as lojas)")
-    st.dataframe(df_cat)
-
-    st.subheader("Vendas por Loja (todas as categorias)")
-    st.dataframe(df_loja)
-
-    st.subheader("Vendas por Loja e Categoria")
-    st.dataframe(df_loja_cat)
-
