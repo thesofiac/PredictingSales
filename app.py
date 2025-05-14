@@ -54,25 +54,25 @@ elif opcao == "Preveja as Vendas":
         ]
         if not resultado.empty:
             vendas = max(resultado["vendas"].values[0], 0)
-            st.metric(f"🛒 Vendas da Loja {store_selected} para a Categoria '{category_selected}'", f"R$ {vendas:,.2f}")
+            st.metric(f"Vendas da Loja {store_selected} para a Categoria '{category_selected}'", f"R$ {vendas:,.2f}")
         else:
             st.warning("Não há dados para essa combinação.")
 
     elif store_selected != "Todas as lojas" and category_selected == "Todas as categorias":
         resultado = df_loja_cat[df_loja_cat["ID_loja"] == store_selected]
         total = resultado["vendas"].apply(lambda x: max(x, 0)).sum()
-        st.metric(f"🏬 Vendas totais da Loja {store_selected}", f"R$ {total:,.2f}")
+        st.metric(f"Vendas totais da Loja {store_selected}", f"R$ {total:,.2f}")
         st.dataframe(resultado.assign(vendas=resultado["vendas"].apply(lambda x: max(x, 0))))
 
     elif store_selected == "Todas as lojas" and category_selected != "Todas as categorias":
         resultado = df_loja_cat[df_loja_cat["categoria"] == category_selected]
         total = resultado["vendas"].apply(lambda x: max(x, 0)).sum()
-        st.metric(f"📦 Vendas totais da Categoria '{category_selected}'", f"R$ {total:,.2f}")
+        st.metric(f"Vendas totais da Categoria '{category_selected}'", f"R$ {total:,.2f}")
         st.dataframe(resultado.assign(vendas=resultado["vendas"].apply(lambda x: max(x, 0))))
 
     else:
         total = df_loja_cat["vendas"].apply(lambda x: max(x, 0)).sum()
-        st.metric("📈 Vendas totais (todas as lojas e categorias)", f"R$ {total:,.2f}")
+        st.metric("Vendas totais (todas as lojas e categorias)", f"R$ {total:,.2f}")
         st.dataframe(df_loja_cat.assign(vendas=df_loja_cat["vendas"].apply(lambda x: max(x, 0))))
 
     # Mostrar tabelas completas como opção
@@ -189,7 +189,7 @@ elif opcao == "Avalie o modelo":
     mae = mean_absolute_error(y_test, y_pred)
     rmse = np.sqrt(mean_squared_error(y_test, y_pred))
 
-    st.subheader("📏 Métricas de desempenho")
+    st.subheader("Métricas de desempenho")
     st.metric("MAE", f"{mae:.2f}")
     st.metric("RMSE", f"{rmse:.2f}")
 
