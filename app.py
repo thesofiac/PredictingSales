@@ -4,6 +4,7 @@ import pandas as pd
 st.set_page_config(page_title="Consulta de Vendas", layout="centered")
 st.title("📊 Consulta de Vendas por Loja e Categoria")
 
+
 # Carregar arquivos
 @st.cache_data
 def load_data():
