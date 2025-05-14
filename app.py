@@ -47,7 +47,7 @@ elif opcao == "Preveja as Vendas":
     if not resultado.empty:
             vendas = max(resultado["vendas"].values[0], 0)
             st.metric(f"🛒 Vendas da Loja {store_selected} para a Categoria '{category_selected}'", f"R$ {vendas:,.2f}")
-        else:
+    else:
             st.warning("Não há dados para essa combinação.")
 
     elif store_selected != "Todas as lojas" and category_selected == "Todas as categorias":
