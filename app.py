@@ -12,8 +12,7 @@ def load_data():
     df_loja_cat = pd.read_csv("grouped_by_stores_families.txt", sep=',', engine='python')
     return df_cat, df_loja, df_loja_cat
 
-#df_cat, df_loja, df_loja_cat = load_data()
-df_cat, df_loja = load_data()
+df_cat, df_loja, df_loja_cat = load_data()
 
 # Seletores
 store_ids = sorted(df_loja_cat["store_nbr"].unique())
