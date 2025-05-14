@@ -45,16 +45,16 @@ elif opcao == "Preveja as Vendas":
         ]
     
     if not resultado.empty:
-            vendas = max(resultado["vendas"].values[0], 0)
-            st.metric(f"🛒 Vendas da Loja {store_selected} para a Categoria '{category_selected}'", f"R$ {vendas:,.2f}")
-    else:
+        vendas = max(resultado["vendas"].values[0], 0)
+        st.metric(f"🛒 Vendas da Loja {store_selected} para a Categoria '{category_selected}'", f"R$ {vendas:,.2f}")
+        else:
             st.warning("Não há dados para essa combinação.")
 
-    elif store_selected != "Todas as lojas" and category_selected == "Todas as categorias":
-        resultado = df_loja_cat[df_loja_cat["ID_loja"] == store_selected]
-        total = resultado["vendas"].apply(lambda x: max(x, 0)).sum()
-        st.metric(f"🏬 Vendas totais da Loja {store_selected}", f"R$ {total:,.2f}")
-        st.dataframe(resultado.assign(vendas=resultado["vendas"].apply(lambda x: max(x, 0))))
+        elif store_selected != "Todas as lojas" and category_selected == "Todas as categorias":
+            resultado = df_loja_cat[df_loja_cat["ID_loja"] == store_selected]
+            total = resultado["vendas"].apply(lambda x: max(x, 0)).sum()
+            st.metric(f"🏬 Vendas totais da Loja {store_selected}", f"R$ {total:,.2f}")
+            st.dataframe(resultado.assign(vendas=resultado["vendas"].apply(lambda x: max(x, 0))))
 
     elif store_selected == "Todas as lojas" and category_selected != "Todas as categorias":
         resultado = df_loja_cat[df_loja_cat["categoria"] == category_selected]
