@@ -14,7 +14,7 @@ opcao = st.sidebar.selectbox("Escolha uma opção:", ["Entenda os Dados", "Preve
 if opcao == "Entenda os Dados":
     st.title("Entenda os Dados")
     st.markdown("""
-    <h5>
+    <h5><div style="text-align: justify;">
     Os dados utilizados referem-se às vendas realizadas por 54 lojas espalhadas pelo país, no período de 1º de janeiro de 2013 a 15 de agosto de 2017.<br><br>
     As vendas foram categorizadas por departamento, como mercearia, beleza, casa, entre outros.<br><br>
     No tratamento dos dados, combinei as informações de vendas com dados de feriados nacionais e regionais, além da localização de cada loja, para identificar se a loja estaria ou não em funcionamento em determinada data.<br><br>
@@ -22,7 +22,7 @@ if opcao == "Entenda os Dados":
     Adicionei lags (valores de vendas passados) para capturar a dependência temporal, e calculei médias móveis e médias exponenciais para identificar tendências e sazonalidades.<br><br>
     Após testes com diferentes hiperparâmetros utilizando GridSearch, foi selecionada a configuração <code>GradientBoostingRegressor(learning_rate=0.1, max_depth=3, n_estimators=100, subsample=1.0)</code> para realizar as previsões.<br><br>
     Os dados exibidos na aba <i>Preveja as Vendas</i> representam as estimativas geradas pelo modelo para o dia 16 de agosto de 2017.
-    </h5>
+    </div></h5>
     """, unsafe_allow_html=True)
 
 
