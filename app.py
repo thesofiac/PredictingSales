@@ -15,13 +15,12 @@ if opcao == "Entenda os Dados":
     st.title("Entenda os Dados")
     st.markdown("""
     <h5><div style="text-align: justify;">
-    Os dados utilizados referem-se às vendas realizadas por 54 lojas espalhadas pelo país, no período de 1º de janeiro de 2013 a 15 de agosto de 2017.<br><br>
-    As vendas foram categorizadas por departamento, como mercearia, beleza, casa, entre outros.<br><br>
-    No tratamento dos dados, combinei as informações de vendas com dados de feriados nacionais e regionais, além da localização de cada loja, para identificar se a loja estaria ou não em funcionamento em determinada data.<br><br>
-    Foram extraídas variáveis temporais como dia da semana, mês, início e fim de mês, considerando também datas típicas de pagamento nos locais.<br><br>
-    Adicionei lags (valores de vendas passados) para capturar a dependência temporal, e calculei médias móveis e médias exponenciais para identificar tendências e sazonalidades.<br><br>
-    Após testes com diferentes hiperparâmetros utilizando GridSearch, foi selecionada a configuração <code>GradientBoostingRegressor(learning_rate=0.1, max_depth=3, n_estimators=100, subsample=1.0)</code> para realizar as previsões.<br><br>
-    Os dados exibidos na aba <i>Preveja as Vendas</i> representam as estimativas geradas pelo modelo para o dia 16 de agosto de 2017.
+    Os dados utilizados referem-se às <span style='color:#E07A5F;'>vendas realizadas</span> por 54 lojas espalhadas pelo país, no período de 1º de janeiro de 2013 a 15 de agosto de 2017. As vendas foram <span style='color:#E07A5F;'>categorizadas</span> por departamento, como mercearia, beleza, casa, entre outros.<br><br>
+    No tratamento dos dados, combinei as informações de vendas com dados de <span style='color:#E07A5F;'>feriados nacionais e regionais</span>, além da localização de cada loja, para identificar se a loja estaria ou não em funcionamento em determinada data.<br><br>
+    Foram extraídas <span style='color:#E07A5F;'>variáveis temporais</span> como dia da semana, mês, início e fim de mês, considerando também datas típicas de <span style='color:#E07A5F;'>pagamento</span> nos locais.<br><br>
+    Adicionei <span style='color:#E07A5F;'>lags</span> (valores de vendas passados) para capturar a <span style='color:#E07A5F;'>dependência temporal</span>, e calculei médias móveis e médias exponenciais para <span style='color:#E07A5F;'>identificar tendências e sazonalidades</span>.<br><br>
+    Após testes com diferentes hiperparâmetros utilizando <span style='color:#E07A5F;'>GridSearch</span>, foi selecionada a configuração <span style='color:#E07A5F;'>GradientBoostingRegressor(learning_rate=0.1, max_depth=3, n_estimators=100, subsample=1.0)</span> para realizar as previsões.<br><br>
+    Os dados exibidos na aba <i><span style='color:#E07A5F;'>Preveja as Vendas</span></i> representam as estimativas geradas pelo modelo para o dia <span style='color:#E07A5F;'>16 de agosto de 2017</span>.
     </div></h5>
     """, unsafe_allow_html=True)
 
